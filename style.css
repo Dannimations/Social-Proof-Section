@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap');
+
+:root{
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+    
+
+    --ff: "League Spartan", sans-serif;
+    --fs-body: 1rem;
+    --fs-title: 2rem;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ff);
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+h1{
+    line-height: .9;
+
+}
+
+body{
+    /* border: 10px solid; */
+    font-family: var(--ff);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    color: var(--dark-grayish-magenta);
+    background: url(images/bg-pattern-top-desktop.svg) top left, 
+    url(images/bg-pattern-bottom-desktop.svg) bottom right;
+    background-repeat: no-repeat;
+    background-color: var(--white);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    font-size: var(--fs-title);
+    margin-bottom: 1rem;
+}
+
+.title, .ratingText{
+    font-weight: var(--fw-700);
+    color: var(--very-dark-magenta);
+}
+
+.userName{
+    font-weight: var(--fw-700);
+    color: var(--white);
+}
+
+.userStat{
+    color: var(--soft-pink);
+}
+
+.socialContainer{
+    margin: 4rem 1.5rem;
+}
+
+.socialRowDesc{
+    text-align: center;
+}
+
+.socialRow{
+    flex-direction: column;
+}
+
+.socialContent{
+    gap: 1rem;
+}
+
+.cardContainer{
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.ratingItem{
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.rating > * + * {
+    margin-top: 1rem;
+}
+
+.userInfo{
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.userInfo img{
+    max-width: 3rem;
+    border-radius: 50%;
+}
+
+.card{
+    color: var(--light-grayish-magenta);
+    border-radius: .5rem;
+    padding: 2rem;
+    background: var(--very-dark-magenta);
+}
+
+.stars{
+    gap: .5rem;
+}
+
+.ratingItem{
+    display: inline-flex;
+    width: 100%;
+    border-radius: .5rem;
+    padding: .8rem;
+    background: hsla(343, 10%, 53%, 0.1);
+}
+
+@media (min-width: 750px){
+    .socialRowDesc{
+        text-align: left;
+    }
+
+    .cardContainer{
+        flex-direction: row;
+    }
+    .socialContent{
+        flex-direction: row;
+    }
+
+    .socialContent > *{
+        flex-basis: 50%;
+    }
+
+    
+}
+@media (min-width: 1024px){
+    :root{
+        --fs-title: 3rem;
+    }
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+    }
+
+    .socialContainer{
+        max-width: 65rem;
+    }
+
+    .socialRowDesc{
+        flex-basis: 40%;
+    }
+
+    .socialContent{
+        justify-content: space-between;
+    }
+
+    .rating{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .rating > *:nth-child(1){
+        margin-right: 6rem;
+    }
+    .rating > *:nth-child(2){
+        margin-right: 3rem;
+    }
+
+    .cardContainer{
+        margin-top: 1rem;
+    }
+
+    .cardContainer > *:nth-child(3){
+        margin-top: 6rem;
+    }
+    .cardContainer > *:nth-child(2){
+        margin-top: 3rem;
+    }
+
+    .ratingItem{
+        gap: 2rem;
+        width: 85%;
+        justify-content: center;
+        padding: 1rem 3rem;
+        flex-direction: row;
+    }
+    .ratingText{
+        width: 100%;
+        margin-left: 2rem;
+    }
+}
